@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Doterra Webpage 
+        link(rel="stylesheet", href="/styles/style.css")
+
+    body
+        div.container  
+            h1  Caprena's DoTerra Oil App
+            img(src="/images/oilforthat.jpeg", alt="Oil for That pic")
+            p So many of the products we use in our day-to-day lives are   filled with synthetic chemicals. These unnatural products can weigh us down and even negatively influence the way we think, feel, and live. Pure essential oils offer an alternative to synthetic products. DoTerra is heads and tails above the rest, providing the purest, highest quality essential oils and products. 
+        form(action="/oils", method="post") 
+                div
+                    input.infobox(name ="oil" id ="oil" placeholder="Type in an Oil" required)
+                    button.button(type="submit") Search by Oil  
+        form(action="/oils", method="post") 
+                div
+                    input.infobox(name ="uses" id ="uses" placeholder="Type in a Condition" required)
+                    button.button(type="submit") Search by Condition 
+           
+        
+        
