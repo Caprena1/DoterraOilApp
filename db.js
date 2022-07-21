@@ -2,7 +2,8 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const dev = require('./dev.js')
 const Pool = require('pg').Pool
 const pool = new Pool(dev)
-
+const tsquery = require('pg-tsquery')
+ 
 //GET THE USERS
 const getOils = (request, response) => {
     pool.query('SELECT * FROM oils ORDER BY id', (error, results) => {
@@ -37,6 +38,18 @@ const getOilByName = (request, response) => {
     })
 }
 
+const getoilByCondition = (request, response) => {
+    const uses = request.params.uses
+    
+    pool.query('SELECT * FROM oils WHERE uses LIKE %uses% = $1', [uses], (error, results) => {
+        if(error) {
+            console.log(error)
+        }else {
+            response.status(200).json(results.rows)
+        }
+    })
+}
+
 const createOil = (request, response) => {
     const oilName = request.body.name
     const oilImg = request.body.imagelink
@@ -45,7 +58,7 @@ const createOil = (request, response) => {
     const oilWhole = request.body.wholesale
     const oilRetail = request. body.retail
 
-    pool.query('INSERT INTO oils (name, imagelink, description, uses, wholesale, retail) VALUES ($1, $2, $3, $4, $5)', [oilName, oilImg, oilDescrip, oilUses, oilWhole, oilRetail], (error, results) => {
+    pool.query('INSERT INTO oils (name, imagelink, description, uses, wholesale, retail) VALUES ($1, $2, $3, $4, $5, $6)', [oilName, oilImg, oilDescrip, oilUses, oilWhole, oilRetail], (error, results) => {
         if(error){
             console.log(error)
         }else {
@@ -69,14 +82,14 @@ const deleteOil = (request, response) => {
 
 const updateOil = (request, response) => {
     const id = parseInt(request.body.id)
-    const oilName = request.body.name
-    const oilImg = request.body.imagelink
-    const oilDescrip = request.body.description
-    const oilUses = request.body.uses
-    const oilWhole = request.body.wholesale
-    const oilRetail = request. body.retail
+    const name = request.body.name
+    const imagelink = request.body.imagelink
+    const description = request.body.description
+    const uses = request.body.uses
+    const wholesale = request.body.wholesale
+    const retail = request. body.retail
 
-    pool.query('UPDATE oils SET name = $1, imagelink = $2, description = $3, uses = $4, wholesale = $5, retail = $6 WHERE id = $7', [oilName, oilImg, oilDescrip, oilUses, oilWhole, oilRetail, id], (error, results) => {
+    pool.query('UPDATE oils SET name = $1, imagelink = $2, description = $3, uses = $4, wholesale = $5, retail = $6 WHERE id = $7', [name, imagelink, description, uses, wholesale, retail, id], (error, results) => {
         if(error) {
             console.log(error)
         }else {
@@ -92,6 +105,7 @@ module.exports = {
     getOilByName,
     createOil,
     deleteOil,
-    updateOil
+    updateOil,
+    getoilByCondition
 
 }

@@ -8,18 +8,44 @@ html(lang="en")
         link(rel="stylesheet", href="/styles/style.css")
 
     body
+        div 
+        a(href="/signup") Signup
+        a(href="/login") Login
+        a(href="/logout") Logout
+        br
+        br
+        form.form(action="/oilByName", method="post") 
+            label(for="username") Username: 
+            input.formbox(id="username" name="username")
+            br
+            br
+            label(for="password") Password: 
+            input.formbox(id="password" name="password")  
+            br
+            br
+            button.button(type="submit") Submit!
+        //- form.form(action="/oilByName", method="post") 
+        //-     label(for="username") Username: 
+        //-     input.formbox(id="username" name="username")
+        //-     br
+        //-     br
+        //-     label(for="password") Password: 
+        //-     input.formbox(id="password" name="password")  
+        //-     br
+            
+            
         div.container  
             h1  Caprena's DoTerra Oil App
             img(src="/images/oilforthat.jpeg", alt="Oil for That pic")
             p So many of the products we use in our day-to-day lives are   filled with synthetic chemicals. These unnatural products can weigh us down and even negatively influence the way we think, feel, and live. Pure essential oils offer an alternative to synthetic products. DoTerra is heads and tails above the rest, providing the purest, highest quality essential oils and products. 
-        form(action="/oils", method="post") 
-                div
-                    input.infobox(name ="oil" id ="oil" placeholder="Type in an Oil" required)
-                    button.button(type="submit") Search by Oil  
-        form(action="/oils", method="post") 
-                div
-                    input.infobox(name ="uses" id ="uses" placeholder="Type in a Condition" required)
-                    button.button(type="submit") Search by Condition 
-           
+            form(action="/oilByName", method="GET") 
+                    div
+                        input.infobox(name ="name" placeholder="Type in an Oil" required)
+                        button.button(id='searchOil') Search by Oil  
+            form(action="/oilByCondition", method="GET") 
+                    div
+                        input.infobox(name ="uses" placeholder="Type in a Condition" required)
+                        button.button(id='searchCondition') Search by Condition 
+    
         
         
