@@ -5,21 +5,24 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title DoTerra Oil Page Display
-    body 
-        div.container 
+        link(rel="stylesheet", href="/styles/style2.css")
+
+    body
+        div
 
             div
+                h1 #{name}
+                img.imagelink(src=imagelink width='200px')
+                h4 Description: #{description}
+                h5 Aroma: #{aroma}
+                h5 Plant: #{plant}
+                h3 Uses: #{uses}
+                h5 Directions for use: #{directions}
+                p Wholesale Price: #{wholesale}
+                p Retail Price: #{retail}
 
-                div 
-                    h1 #{name}
-                    img.imagelink(src=imagelink width='200px')
-                    h4 #{description}
-                    h2 #{uses}
-                    p #{wholesale}
-                    p #{retail}
+        a(href="/") 
+            button.button(type="reset") Click for Another Oil Search
+        a 
 
-            a(href="/") 
-                button.button(type="reset") Click for Another Oil Search
-            a 
-
-             
+            

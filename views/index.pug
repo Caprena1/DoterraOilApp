@@ -8,22 +8,24 @@ html(lang="en")
         link(rel="stylesheet", href="/styles/style.css")
 
     body
-        div 
-        a(href="/signup") Signup
-        a(href="/login") Login
-        a(href="/logout") Logout
-        br
-        br
-        form.form(action="/oilByName", method="post") 
-            label(for="username") Username: 
-            input.formbox(id="username" name="username")
-            br
-            br
-            label(for="password") Password: 
-            input.formbox(id="password" name="password")  
-            br
-            br
-            button.button(type="submit") Submit!
+        div
+        img(src="/images/banner.jpeg", alt="Field of Lavender")
+        //- div
+        //- a(href="/signup") Signup
+        //- a(href="/login") Login
+        //- a(href="/logout") Logout
+        //- br
+        //- br
+        //- form.form(action="/oilByName", method="post") 
+        //-     label(for="username") Username: 
+        //-     input.formbox(id="username" name="username")
+        //-     br
+        //-     br
+        //-     label(for="password") Password: 
+        //-     input.formbox(id="password" name="password")  
+        //-     br
+        //-     br
+        //-     button.button(type="submit") Submit!
         //- form.form(action="/oilByName", method="post") 
         //-     label(for="username") Username: 
         //-     input.formbox(id="username" name="username")
@@ -34,18 +36,23 @@ html(lang="en")
         //-     br
             
             
-        div.container  
-            h1  Caprena's DoTerra Oil App
-            img(src="/images/oilforthat.jpeg", alt="Oil for That pic")
-            p So many of the products we use in our day-to-day lives are   filled with synthetic chemicals. These unnatural products can weigh us down and even negatively influence the way we think, feel, and live. Pure essential oils offer an alternative to synthetic products. DoTerra is heads and tails above the rest, providing the purest, highest quality essential oils and products. 
-            form(action="/oilByName", method="GET") 
-                    div
-                        input.infobox(name ="name" placeholder="Type in an Oil" required)
-                        button.button(id='searchOil') Search by Oil  
-            form(action="/oilByCondition", method="GET") 
-                    div
-                        input.infobox(name ="uses" placeholder="Type in a Condition" required)
-                        button.button(id='searchCondition') Search by Condition 
+        div.container
+            h1 Caprena's Oil App
+            a(href='https://mydoterra.com/caprenarichie')
+                img.oilpic(src="/images/oiladvocate.jpeg", alt="Pic of oils")
+                img.oilpic(src="/images/oilforthat.jpeg", alt="Oil for That pic")
+            p Have a headache, suffer with allergies and sinus, dealing with joint pain, back pain, emotional pain, or insomnia? Does fatigue and exhaustion from the day-to-day have you going on fumes....I'VE GOT AN OIL FOR THAT!! 
+
+            p So many of the products we use in our day-to-day lives are   filled with synthetic chemicals. These unnatural products can weigh us down and even negatively influence the way we think, feel, and live. Pure essential oils offer an alternative to synthetic products. DoTerra is heads and tails above the rest, providing the purest, highest quality essential oils and products without additives or synthetics of any kind. 
+                form(action="/oilByName", method="GET") 
+                        div
+                            input.infobox(name ="name" placeholder="Type in an Oil" required)
+                            button.button(id='searchOil') Search by Oil  
+                form(action="/oilByCondition", method="GET") 
+                        div
+                            input.infobox(name ="uses" placeholder="Type Condition" required)
+                            button.button(id='searchCondition') Search by Condition 
+        
     
         
         

@@ -14,13 +14,12 @@ body {
 }
 
 img {
-    width: 100vw;
+    width: 300;
     height: 350px;
     
 }
 
 p {
-    display: flexbox;
     margin-top: 20px;
     font-size: 20px;
     margin-bottom: 15px;
@@ -34,19 +33,6 @@ h1 {
    
 }
 
-.oilpic {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 400px;
-    height: 200px;
-    margin-top: 20px;
-    margin-left: 700px;
-    margin-right: 250px;
-   
-
-   
-}
 
 
 .container {
@@ -57,21 +43,6 @@ h1 {
 }
 
 
-.infobox {
-    padding: 10px 15px;
-    color: black;
-    border: 2px solid black;
-    border-radius: 10px;
-    user-select: none;
-    cursor: pointer;
-    font-weight: bold;
-    width: 200px;
-    font-size: 15px;
-    margin-bottom: 15px;
-    margin-left: 700px;
-    
-    
-}
 
 .button {
     background-color:goldenrod;

@@ -2,8 +2,7 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const dev = require('./dev.js')
 const Pool = require('pg').Pool
 const pool = new Pool(dev)
-const tsquery = require('pg-tsquery')
- 
+
 //GET THE USERS
 const getOils = (request, response) => {
     pool.query('SELECT * FROM oils ORDER BY id', (error, results) => {
@@ -40,8 +39,9 @@ const getOilByName = (request, response) => {
 
 const getoilByCondition = (request, response) => {
     const uses = request.params.uses
+    // console.log(uses)
     
-    pool.query('SELECT * FROM oils WHERE uses LIKE %uses% = $1', [uses], (error, results) => {
+    pool.query("SELECT * FROM oils WHERE upper(uses) LIKE upper('%' || $1 || '%')", [uses], (error, results) => {
         if(error) {
             console.log(error)
         }else {
@@ -54,11 +54,14 @@ const createOil = (request, response) => {
     const oilName = request.body.name
     const oilImg = request.body.imagelink
     const oilDescrip = request.body.description
+    const oilAroma = request.body.aroma
+    const oilPlant = request.body.plant
     const oilUses = request.body.uses
+    const oilDirections = request.body.directions
     const oilWhole = request.body.wholesale
     const oilRetail = request. body.retail
 
-    pool.query('INSERT INTO oils (name, imagelink, description, uses, wholesale, retail) VALUES ($1, $2, $3, $4, $5, $6)', [oilName, oilImg, oilDescrip, oilUses, oilWhole, oilRetail], (error, results) => {
+    pool.query('INSERT INTO oils (name, imagelink, description, aroma, plant, uses, directions, wholesale, retail ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)', [oilName, oilImg, oilDescrip, oilAroma, oilPlant, oilUses, oilDirections, oilWhole, oilRetail], (error, results) => {
         if(error){
             console.log(error)
         }else {
@@ -85,11 +88,14 @@ const updateOil = (request, response) => {
     const name = request.body.name
     const imagelink = request.body.imagelink
     const description = request.body.description
+    const aroma = request.body.aroma
+    const plant = request.body.plant
     const uses = request.body.uses
+    const directions = request.body.directions
     const wholesale = request.body.wholesale
     const retail = request. body.retail
 
-    pool.query('UPDATE oils SET name = $1, imagelink = $2, description = $3, uses = $4, wholesale = $5, retail = $6 WHERE id = $7', [name, imagelink, description, uses, wholesale, retail, id], (error, results) => {
+    pool.query('UPDATE oils SET name = $1, imagelink = $2, description = $3, aroma = $4, plant = $5, uses = $6, directions = $7, wholesale = $8, retail = $9 WHERE id = $9', [name, imagelink, description, aroma, plant, uses, directions, wholesale, retail, id], (error, results) => {
         if(error) {
             console.log(error)
         }else {
