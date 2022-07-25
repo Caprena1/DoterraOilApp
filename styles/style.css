@@ -20,7 +20,7 @@ img {
 }
 
 p {
-    display: flexbox;
+    display: flex;
     margin-top: 20px;
     font-size: 20px;
     margin-bottom: 15px;
@@ -30,7 +30,7 @@ p {
 
 h1 {  
     font-size: 55px;
-    margin-left: 700px;
+    margin-left: 650px;
    
 }
 
@@ -41,7 +41,7 @@ h1 {
     width: 400px;
     height: 200px;
     margin-top: 20px;
-    margin-left: 700px;
+    margin-left: 650px;
     margin-right: 250px;
    
 
@@ -68,7 +68,7 @@ h1 {
     width: 200px;
     font-size: 15px;
     margin-bottom: 15px;
-    margin-left: 700px;
+    margin-left: 615px;
     
     
 }
@@ -92,17 +92,34 @@ h1 {
 
 @media screen and (max-width: 800) {
 
-    .card {
+    .container {
         flex-direction: row;
         gap: 2px;
+    }
+
+    .oilpic {
+        width: 400px;
+        height: 200px;
+        flex-direction: row;
+
     }
     
 }
 
 @media (max-width: 767px) {
     img {
-        width: 200px;
+        width: 400px;
         height: 200px;
-        
     }
+
+        .oilpic {
+            width: 400px;
+            height: 200px;
+            flex-direction: row;
+            
+        }
+        
+    
+
+    
 }

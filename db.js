@@ -28,7 +28,7 @@ const getOilByID = (request, response) => {
 const getOilByName = (request, response) => {
     const name = request.params.name
     
-    pool.query('SELECT * FROM oils WHERE name = $1', [name], (error, results) => {
+    pool.query('SELECT * FROM oils WHERE upper(name) LIKE upper($1)', [name], (error, results) => {
         if(error) {
             console.log(error)
         }else {
