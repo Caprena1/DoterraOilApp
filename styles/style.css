@@ -7,57 +7,75 @@
 body {
     background-color:rgba(198, 224, 198, 0.507);
     min-height: 100vh;
-    margin: 30px;
     padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
    
 }
 
 img {
     width: 100vw;
-    height: 350px;
+    height: 275px;
+    margin-bottom: 10px;
     
 }
 
-p {
+p {  
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     margin-top: 20px;
     font-size: 20px;
-    margin-bottom: 15px;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-bottom: 15px;  
+    margin-left: 6rem;
+    margin-right: 6rem;
+
 }
 
 h1 {  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     font-size: 55px;
-    margin-left: 650px;
+    margin-top: 7px;
+    margin-left: 300px;
+    margin-right: 300px;
    
 }
+
+
 
 .oilpic {
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     width: 400px;
-    height: 200px;
-    margin-top: 20px;
-    margin-left: 650px;
-    margin-right: 250px;
-   
-
+    margin-top: 7px;
+    margin-bottom: 7px;
    
 }
 
-
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 15px;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     font-size: 15px;
+    margin-left: 200px;
+    margin-right: 100px;
+    
 }
 
 
 .infobox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 10px 15px;
     color: black;
     border: 2px solid black;
@@ -66,11 +84,8 @@ h1 {
     cursor: pointer;
     font-weight: bold;
     width: 200px;
-    font-size: 15px;
-    margin-bottom: 15px;
-    margin-left: 615px;
-    
-    
+    margin-right: 125px;
+    margin-left: 8px;  
 }
 
 .button {
@@ -84,10 +99,9 @@ h1 {
     font-weight: bold;
     width: 200px;
     font-size: 15px;
-    margin-bottom: 15px;
-    margin-right: 250px;
-    margin-left: 20px;
-    
+    margin-top: .9rem;
+    margin-right:200px;
+    margin-left: 20px;  
 }
 
 @media screen and (max-width: 800) {
@@ -95,13 +109,6 @@ h1 {
     .container {
         flex-direction: row;
         gap: 2px;
-    }
-
-    .oilpic {
-        width: 400px;
-        height: 200px;
-        flex-direction: row;
-
     }
     
 }
@@ -115,7 +122,7 @@ h1 {
         .oilpic {
             width: 400px;
             height: 200px;
-            flex-direction: row;
+            flex-direction: column;
             
         }
         

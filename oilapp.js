@@ -84,23 +84,8 @@ app.get('/oilByName', (req, res) => {
     .then((response) => response.json())
     .then((resJson) => {
         console.log(resJson)
-        const oilData = {
-            name: resJson[0].name,
-            imagelink: resJson[0].imagelink,
-            description: resJson[0].description,
-            aroma: resJson[0].aroma,
-            plant: resJson[0].plant,
-            uses: resJson[0].uses,
-            directions: resJson[0].directions,
-            wholesale: resJson[0].wholesale,
-            retail: resJson[0].retail
-        }
-        return oilData
-    })
-    .then((oilData) => {
-        console.log(oilData)
-
-        res.render('oildisplay', oilData)
+        
+        res.render('oildisplay', {oils: resJson})
     })
     .catch((err) => console.log(err)) 
 })
@@ -114,24 +99,10 @@ app.get('/oilByCondition', (req, res) => {
     .then((response) => response.json())
     .then((resJson) => {
         console.log(resJson)
-        const oilData = {
-            name: resJson[0].name,
-            imagelink: resJson[0].imagelink,
-            description: resJson[0].description,
-            aroma: resJson[0].aroma,
-            plant: resJson[0].plant,
-            uses: resJson[0].uses,
-            directions: resJson[0].directions,
-            wholesale: resJson[0].wholesale,
-            retail: resJson[0].retail
-        }
-        return oilData
-    })
-    .then((oilData) => {
-        console.log(oilData)
 
-        res.render('oildisplay', oilData)
+        res.render('oildisplay', {oils: resJson})
     })
+   
     .catch((err) => console.log(err)) 
 
 })

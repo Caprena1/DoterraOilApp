@@ -7,22 +7,24 @@ html(lang="en")
         title DoTerra Oil Page Display
         link(rel="stylesheet", href="/styles/style2.css")
 
-    body
-        div
-
-            div
-                h1 #{name}
-                img(src=imagelink width='200px')
-                h4 Description: #{description}
-                h5 Aroma: #{aroma}
-                h5 Plant: #{plant}
-                h3 Uses: #{uses}
-                h5 Directions for use: #{directions}
-                p Wholesale Price: #{wholesale}
-                p Retail Price: #{retail}
+    body.container
+        div.container
+            each oil in oils 
+                div.container
+                    h1 #{oil.name}
+                    img.img(src=oil.imagelink width='200px')
+                    h3 Description: #{oil.description}
+                    h4 Aroma: #{oil.aroma}
+                    h4 Plant: #{oil.plant}
+                    h3 Uses: #{oil.uses}
+                    h4 Directions for use: #{oil.directions}
+                    h3 Wholesale Price: #{oil.wholesale}
+                    h3 Retail Price: #{oil.retail}
 
         a(href="/") 
             button.button(type="reset") Click for Another Oil Search
         a 
+
+       
 
             
