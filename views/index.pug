@@ -44,13 +44,13 @@ html(lang="en")
         p Have a headache, suffer with allergies and sinus, dealing with joint pain, back pain, emotional pain, or insomnia? Does fatigue and exhaustion from the day-to-day have you going on fumes....I'VE GOT AN OIL FOR THAT!! 
 
         p So many of the products we use in our day-to-day lives are   filled with synthetic chemicals. These unnatural products can weigh us down and even negatively influence the way we think, feel, and live. Pure essential oils offer an alternative to synthetic products. DoTerra is heads and tails above the rest, providing the purest, highest quality essential oils and products without additives or synthetics of any kind. 
-        div.container2
+        div
             form(action="/oilByName", method="GET") 
-                    div
+                    div.container2
                         input.infobox(name ="name" placeholder="Type in an Oil" required)
                         button.button(id='searchOil') Search by Oil  
             form(action="/oilByCondition", method="GET") 
-                    div
+                    div.container2
                         input.infobox(name ="uses" placeholder="Type Condition" required)
                         button.button(id='searchCondition') Search by Condition 
 

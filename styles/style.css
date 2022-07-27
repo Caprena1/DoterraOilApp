@@ -26,8 +26,8 @@ p {
     margin-top: 20px;
     font-size: 20px;
     margin-bottom: 15px;  
-    margin-left: 6rem;
-    margin-right: 6rem;
+    margin-left: 12rem;
+    margin-right: 12rem;
 
 }
 
@@ -84,6 +84,7 @@ h1 {
     cursor: pointer;
     font-weight: bold;
     width: 200px;
+    margin-top: .9rem;
     margin-right: 125px;
     margin-left: 8px;  
 }
@@ -100,7 +101,7 @@ h1 {
     width: 200px;
     font-size: 15px;
     margin-top: .9rem;
-    margin-right:200px;
+    margin-right: 100px;
     margin-left: 20px;  
 }
 

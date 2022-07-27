@@ -18,8 +18,8 @@ img.img {
     justify-items: center;
     width: 16rem;
     height: 22rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: .6rem;
+    margin-bottom: .6rem;
     margin-left: 49.5rem;
 }
 
@@ -33,7 +33,7 @@ p {
 }
 
 h1 {  
-    margin-top: 0.9rem;
+    margin-top: 2rem;
     font-size: 3.3rem;
     display: flex;
     flex-direction: row;
