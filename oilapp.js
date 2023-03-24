@@ -80,7 +80,7 @@ app.delete('/oils', db.deleteOil)
 app.get('/oilByName', (req, res) => {
     const name = req.query.name
     console.log(req.query)
-    fetch(`http://localhost:3000/getoilByName/${name}`)
+    fetch(`http://localhost:4000/getoilByName/${name}`)
     .then((response) => response.json())
     .then((resJson) => {
         console.log(resJson)
@@ -95,7 +95,7 @@ app.get('/oilByName', (req, res) => {
 app.get('/oilByCondition', (req, res) => {
     const uses = req.query.uses
     console.log(req.query)
-    fetch(`http://localhost:3000/getoilByCondition/${uses}`)
+    fetch(`http://localhost:4000/getoilByCondition/${uses}`)
     .then((response) => response.json())
     .then((resJson) => {
         console.log(resJson)
@@ -107,7 +107,7 @@ app.get('/oilByCondition', (req, res) => {
 
 })
 
-app.listen(3000)
+app.listen(4000)
 //similiar to oilbyname
 //show more than one oil
 //query will be the key and the challenge

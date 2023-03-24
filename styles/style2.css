@@ -20,7 +20,7 @@ img.img {
     height: 22rem;
     margin-top: .6rem;
     margin-bottom: .6rem;
-    margin-left: 49.5rem;
+    margin-left: 45rem;
 }
 
 p {
@@ -69,7 +69,7 @@ h5 {
 
 
 .container {
-    display: flexbox;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     font-size: 0.9rem;
@@ -92,23 +92,25 @@ h5 {
     margin-top: 0.9rem;
     margin-bottom: 0.9rem;
     margin-right: 13rem;
-    margin-left: 52rem;
+    margin-left: 46rem;
     
 }
 
-@media screen and (max-width: 800) {
+/* @media screen and (max-width: 768px) {
 
     .container {
+        display: flex;
         flex-direction: column;
         gap: 2px;
     }
+
+    
     
 }
 
 @media (max-width: 767px) {
-    img {
-        width: 12rem;
-        height: 12rem;
-        
+    img.img {
+        display: flex;
+        flex-direction: column;
     }
-}
+} /*
