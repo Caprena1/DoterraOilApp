@@ -105,34 +105,28 @@ h1 {
     margin-left: 1.2rem;  
 }
 
-@media screen and (max-width: 800) {
+@media only screen and (max-width: 768px) {
+
+    h1 {  
+        display: flex;
+        flex-direction: row;
+        margin-left: 50%;
+    }
+    
+    
+    p {
+        display: flex;
+        flex-direction: row;
+        margin: 10%;
+    }
 
     .container {
-        flex-direction: column;
-        gap: 2px;
-    }
+        display: inline-flex;
+        flex-direction: column; 
+        margin: 7%;
+    }  
 
-    .container2 {
-        display: flex;
-        flex-direction: column;
-        gap: .9rem;
+    .infobox, .button {
+        margin: 10%;
     }
-
-        p {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 767px) {
-    img {
-        width: 50%;
-        height: 50%;
-    }
-
-        .oilpic {
-            display: flex;
-            flex-direction: row; 
-            gap: 15rem;
-        }  
 }

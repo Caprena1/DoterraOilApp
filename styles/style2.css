@@ -20,7 +20,7 @@ img.img {
     height: 22rem;
     margin-top: .6rem;
     margin-bottom: .6rem;
-    margin-left: 45rem;
+    margin-left: 44rem;
 }
 
 p {
@@ -96,21 +96,36 @@ h5 {
     
 }
 
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     .container {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-    }
-
+            display: inline-flex;
+            flex-direction: column; 
+            margin-left: 7%;
+        }  
     
-    
-}
 
-@media (max-width: 767px) {
     img.img {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        margin-left: 5%;
     }
-} /*
+
+    p, h1, h3, h4, h5 {
+        display: flex;
+        flex-direction: column;
+        margin: 1%;
+       
+    }
+
+    h1 {
+        margin-left: 10%;
+    }
+
+    .button {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20%;
+    }   
+}
+
